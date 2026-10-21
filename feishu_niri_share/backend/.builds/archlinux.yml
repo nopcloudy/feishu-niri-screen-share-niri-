@@ -1,0 +1,24 @@
+image: archlinux
+packages:
+  - gcc
+  - clang
+  - meson
+  - wayland
+  - wayland-protocols
+  - pipewire
+  - libinih
+  - scdoc
+  - mesa
+sources:
+  - https://github.com/emersion/xdg-desktop-portal-wlr
+tasks:
+  - setup: |
+      cd xdg-desktop-portal-wlr
+      CC=gcc meson -Dauto_features=enabled -Dsd-bus-provider=libsystemd build-gcc/
+      CC=clang meson -Dauto_features=enabled -Dsd-bus-provider=libsystemd build-clang/
+  - build-gcc: |
+      cd xdg-desktop-portal-wlr
+      ninja -C build-gcc/
+  - build-clang: |
+      cd xdg-desktop-portal-wlr
+      ninja -C build-clang/

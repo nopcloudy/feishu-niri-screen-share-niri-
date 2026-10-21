@@ -1,0 +1,3 @@
+recursive-include feishu_niri_share/backend *
+include README.md
+include LICENSE

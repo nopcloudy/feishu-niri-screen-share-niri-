@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "feishu-niri-share"
+version = "0.1.0"
+description = "User-level niri screen sharing backend for Feishu meetings"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{name = "Feishu Niri Share contributors"}]
+
+[project.scripts]
+feishu-niri-share = "feishu_niri_share.cli:main"
+
+[tool.setuptools]
+packages = ["feishu_niri_share"]
+include-package-data = true
